@@ -11,30 +11,20 @@ $GLOBALS['cat'] = $_GET["cat"];
 if ($cat=='true') {
 	$GLOBALS['categories'] = $_GET["category"];	
 }
-
-//print array values
 //print_r(array_values($distr_code));
-
 //echo $categories;
-
 require('datasets.php');
-
-
 ?>
-
 <html>
 	<head>
-
 	<title>Vienna Districts</title>
 	<link type="text/css" href="css/ol.css" />
 	<script src="JScripts/ol.js" type="text/javascript"></script>
 	<script src="JScripts/jquery.js" type="text/javascript"></script>
 	<script src="popup/scripts/ol-popup.js"></script>
 	</head>
-	
 <body>
 	<div id="map"></div>
-
 <?php
 	//districts boundaries
 	 require('district_boundaries.php');
@@ -58,7 +48,6 @@ require('datasets.php');
 
 		document.getElementById("lib_loc").style.display="none";
 		document.getElementById("lib_loc_img").style.display="none";
-
 
 		document.getElementById("Museums").style.display="none";
 		document.getElementById("Museums_img").style.display="none";
@@ -87,19 +76,14 @@ require('datasets.php');
 		//hide legend div
 		var legend = document.getElementById("legend");
 		legend.style.display = "none";
-
-
 		//features collection
 		var iconFeatures=[];
 	</script>
 
 <?php
-	
 	//datasets
 	$total=count($datasets);
-		
 	for ($i=0; $i <$total ; $i++) {
-		 
 		$goeid=$datasets[$i]['goeid'];
 		$name=$datasets[$i]['name'];
 		$coordinates=$datasets[$i]['coordinates'];
@@ -109,23 +93,13 @@ require('datasets.php');
 		$phone=$datasets[$i]['phone'];
 		$category=$datasets[$i]['cat'];
 		$dist_code=$datasets[$i]['dist_code'];
-		
 		//echo $category;
-		//echo $dist_code;
 		
 		if ($cat=='true') {
-			
-		
-		//if ($categories==$category) {
 		if (in_array($category, $categories)) {
-			
 ?>
 	<script>
-	    //var cord=;
-	   
 		var a=ol.proj.transform(<?php echo $coordinates;?>, 'EPSG:4326', 'EPSG:3857');
-		//alert(a);
-
 		var iconFeature = new ol.Feature({
 			type: 'click',
 			geometry : new ol.geom.Point(a),
