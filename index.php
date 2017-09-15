@@ -1,4 +1,5 @@
 <?php 
+require('ErrorDisable.php');
 require('conn.php');
 //list of districts name
 require('district_bound_dataset.php');
