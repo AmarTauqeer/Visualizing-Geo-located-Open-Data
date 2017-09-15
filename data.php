@@ -95,7 +95,7 @@ else {
 ?>
                 <script>
                     var vectorSource = new ol.source.Vector({
-                        features: iconFeatures 
+                        features: iconFeatures
                     });
 
                     var vectorLayer = new ol.layer.Vector({
@@ -123,7 +123,9 @@ else {
 
                     //adding districts boundaries
                     var count_dist = '<?php  $count=count($distr_code); echo $count; ?>';
-                    AddDistBound(count_dist);
+                    //passing vector layers objects as parameters
+                    AddDistBound(count_dist, vectorLayer_b0, vectorLayer_b1, vectorLayer_b2, vectorLayer_b3, vectorLayer_b4, vectorLayer_b5, vectorLayer_b6, vectorLayer_b7, vectorLayer_b8, vectorLayer_b9, vectorLayer_b10, vectorLayer_b11, vectorLayer_b12, vectorLayer_b13, vectorLayer_b14, vectorLayer_b15, vectorLayer_b16, vectorLayer_b17, vectorLayer_b18, vectorLayer_b19, vectorLayer_b20, vectorLayer_b21, vectorLayer_b22);
+
                     //adding vector layer
                     map.addLayer(vectorLayer);
                     //popup		
