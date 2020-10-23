@@ -16,7 +16,7 @@ category wise information like hospital, library, city bike location from one or
 
 -PHP
 
--Postgresql
+-MySQL
 
 -Jquery
 
